@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Leaflet for spatial analysis -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-geometryutil@0.10.1/src/leaflet.geometryutil.js"></script>
+    
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <div class="header-container">
+            <div class="app-brand">
+                <h1><span class="brand-icon">🛡️</span> SafeRoute</h1>
+                <p class="brand-tagline">Navigate with confidence</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div id="controls">
+            <div id="error-notification" class="notification"></div>
+            
+            <div class="input-group">
+                <label for="start-address">Start Address</label>
+                <div class="input-wrapper">
+                    <input type="text" id="start-address" placeholder="Enter start address">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="end-address">Destination</label>
+                <div class="input-wrapper">
+                    <input type="text" id="end-address" placeholder="Enter destination address">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            
+            <button id="find-route-btn">Find Route</button>
+            
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+            
+            <div class="drawing-controls">
+                <button id="clear-points-btn">Clear All Points</button>
+                <button id="show-crime-time-btn">View Crime Times</button>
+            </div>
+            
+            <!-- Safety Radius Control (moved here) -->
+            <div class="safety-control">
+                <h3>Safety Settings</h3>
+                <div class="safety-radius-slider-container">
+                    <label for="safety-radius">Safety Radius: <span id="radius-value">0</span>m</label>
+                    <div class="slider-wrapper">
+                        <input type="range" id="safety-radius" min="0" max="500" step="1" value="0">
+                    </div>
+                </div>
+                <p class="safety-hint">Adjust to hide traffic signals near crime locations</p>
+            </div>
+            
+            <!-- Route Options Panel -->
+            <div class="route-options-panel">
+                <h3>Route Options</h3>
+                <div id="route-options-container">
+                    <p class="route-options-hint">Find a route to see available options</p>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="poi-list" id="poi-list"></div>
+            </div>
+            
+            <button id="chat-toggle-btn" class="chat-toggle-btn">Open Assistant</button>
+        </div>
+        
+        <!-- Crime Time Analysis Panel -->
+        <div id="crime-time-panel" class="crime-time-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-clock"></i> Crime Time Analysis</h3>
+                <button id="crime-time-collapse" class="panel-toggle-btn"><i class="fas fa-chevron-up"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="time-chart-container">
+                    <canvas id="crime-time-chart"></canvas>
+                </div>
+                <div class="time-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Peak Crime Time</div>
+                        <div class="stat-value" id="peak-crime-time">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Safest Time</div>
+                        <div class="stat-value" id="safest-crime-time">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Total Incidents</div>
+                        <div class="stat-value" id="total-crime-incidents">-</div>
+                    </div>
+                </div>
+                <div class="time-categories">
+                    <div class="category morning">
+                        <div class="category-label">Morning</div>
+                        <div class="category-value" id="morning-incidents">-</div>
+                        <div class="category-bar">
+                            <div class="bar-fill" id="morning-bar"></div>
+                        </div>
+                    </div>
+                    <div class="category afternoon">
+                        <div class="category-label">Afternoon</div>
+                        <div class="category-value" id="afternoon-incidents">-</div>
+                        <div class="category-bar">
+                            <div class="bar-fill" id="afternoon-bar"></div>
+                        </div>
+                    </div>
+                    <div class="category evening">
+                        <div class="category-label">Evening</div>
+                        <div class="category-value" id="evening-incidents">-</div>
+                        <div class="category-bar">
+                            <div class="bar-fill" id="evening-bar"></div>
+                        </div>
+                    </div>
+                    <div class="category night">
+                        <div class="category-label">Night</div>
+                        <div class="category-value" id="night-incidents">-</div>
+                        <div class="category-bar">
+                            <div class="bar-fill" id="night-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="time-advice" id="time-advice">
+                    Select a route to see crime time analysis.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Crime Type Analysis Panel -->
+        <div id="crime-type-panel" class="crime-time-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-chart-pie"></i> Crime Type Analysis</h3>
+                <button id="crime-type-collapse" class="panel-toggle-btn"><i class="fas fa-chevron-up"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="time-chart-container">
+                    <canvas id="crime-type-chart"></canvas>
+                </div>
+                <div class="time-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Top Crime Type</div>
+                        <div class="stat-value" id="top-crime-type">-</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Total Incidents</div>
+                        <div class="stat-value" id="total-type-incidents">-</div>
+                    </div>
+                </div>
+                <div class="time-advice" id="crime-type-advice">
+                    Select a route to see crime type analysis.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Streetlight Coverage Panel -->
+        <div id="streetlight-panel" class="crime-time-panel">
+            <div class="panel-header">
+                <h3><i class="fas fa-lightbulb"></i> Streetlight Coverage</h3>
+                <button id="streetlight-collapse" class="panel-toggle-btn"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="panel-content">
+                <div class="streetlight-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Route Coverage</div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="streetlight-progress">
+                                <div class="progress-fill" id="streetlight-progress-fill"></div>
+                                <div class="progress-text" id="streetlight-coverage-percent">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Lamp Density</div>
+                        <div class="stat-value" id="lamp-density">-</div>
+                        <div class="stat-desc">lamps per 100m</div>
+                    </div>
+                </div>
+                <div class="streetlight-advice" id="streetlight-advice">
+                    Select a route to see streetlight coverage analysis.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add marker controls container -->
+        <div id="marker-controls-container">
+            <div id="marker-controls-toggle">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div id="marker-controls">
+                <button id="toggle-traffic-signals" class="map-control-btn">
+                    <i class="fas fa-traffic-light"></i>
+                    Traffic Signals
+                </button>
+                <button id="toggle-street-lamps" class="map-control-btn">
+                    <i class="fas fa-lightbulb"></i>
+                    Street Lamps
+                </button>
+                <button id="toggle-hospitals" class="map-control-btn">
+                    <i class="fas fa-hospital"></i>
+                    Hospitals
+                </button>
+                <button id="toggle-police-stations" class="map-control-btn">
+                    <i class="fas fa-shield-alt"></i>
+                    Police Stations
+                </button>
+                <button id="toggle-crime" class="map-control-btn">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Crime Locations
+                </button>
+            </div>
+        </div>
+        
+        <div id="map">
+            <!-- Map Controls Container -->
+            <div class="map-controls-container">
+                <!-- Traffic Signals Toggle Button -->
+                <div id="traffic-signals-control" class="map-control">
+                    <button id="toggle-traffic-signals" class="map-control-btn">
+                        🚦Traffic Signals
+                    </button>
+                    
+                    <!-- New Traffic Signal Clustering Slider -->
+                    <div class="traffic-cluster-slider-container">
+                        <label for="traffic-cluster-radius">Cluster Radius: <span id="cluster-value">40</span>m</label>
+                        <input type="range" id="traffic-cluster-radius" min="10" max="100" step="10" value="40">
+                    </div>
+                </div>
+    
+                <!-- Crime Data Toggle Button -->
+                <div id="crime-markers-control" class="map-control">
+                    <button id="toggle-crime" class="map-control-btn">
+                        <i class="fas fa-exclamation-triangle"></i> Crime Locations
+                    </button>
+                </div>
+                
+                <!-- Street Lamps Toggle Button -->
+                <div id="street-lamps-control" class="map-control">
+                    <button id="toggle-street-lamps" class="map-control-btn">
+                        <i class="fas fa-lightbulb"></i> Street Lamps
+                    </button>
+                </div>
+                
+                <!-- Hospital Locations Toggle Button -->
+                <div id="hospitals-control" class="map-control">
+                    <button id="toggle-hospitals" class="map-control-btn">
+                        <i class="fas fa-hospital"></i> Hospitals
+                    </button>
+                </div>
+                
+                <!-- Police Station Locations Toggle Button -->
+                <div id="police-stations-control" class="map-control">
+                    <button id="toggle-police-stations" class="map-control-btn">
+                        <i class="fas fa-shield-alt"></i> Police Stations
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating AI Assistant Button -->
+        <div id="ai-assistant-button" class="ai-assistant-button">
+            <div class="assistant-icon">
+                <span class="icon-robot" style="font-size: 32px;">🤖</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Chat Panel -->
+    <div id="chat-panel" class="chat-panel">
+        <div class="chat-panel-header">
+            <h3>NightBot Safety Guide</h3>
+            <button id="chat-close-btn" class="chat-close-btn">×</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message assistant">
+                <span class="assistant-avatar">🤖</span>
+                <span class="message-content">
+                <p>Hi there! I'm your NightBot safety assistant. I can help you find well-lit, secure routes and recommend safe places to visit after dark. How can I assist with your journey tonight?</p>
+                </span>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Ask for help...">
+            <button id="chat-send-btn">Send</button>
+        </div>
+    </div>
+    
+    <script>
+        // Set Mapbox token from Flask
+        const mapboxToken = '{{ mapbox_token }}';
+        if (!mapboxToken) {
+            alert('Mapbox token is missing. Please set it in your .env file.');
+        }
+        
+        // Google Maps API key
+        const googleMapsApiKey = 'AIzaSyChefv1LfV5ug_IZO__nHlMAVBLr0M7q7E';
+        
+        // Remove the hardcoded OpenAI API key since it will be handled by the server
+        // This key should only be configured on the server side in environment variables
+    </script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/crime-type-panel.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/streetlight-panel.js') }}"></script>
+</body>
+</html> 

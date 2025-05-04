@@ -1,0 +1,1233 @@
+{
+  "crime_data": [
+    {
+      "lga": "              (electronic or otherwise) containing that data.",
+      "metrics": {},
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Albury",
+      "metrics": {
+        "incidents": "268",
+        "rank": "38",
+        "rate": "520.5299"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Armidale Regional",
+      "metrics": {
+        "incidents": "195",
+        "rank": "22",
+        "rate": "645.8451"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Ballina",
+      "metrics": {
+        "incidents": "93",
+        "rank": "98",
+        "rate": "219.6712"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Balranald",
+      "metrics": {
+        "incidents": "10",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bathurst Regional",
+      "metrics": {
+        "incidents": "208",
+        "rank": "41",
+        "rate": "498.8727"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bayside",
+      "metrics": {
+        "incidents": "463",
+        "rank": "79",
+        "rate": "290.789"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bega Valley",
+      "metrics": {
+        "incidents": "104",
+        "rank": "75",
+        "rate": "308.4863"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bellingen",
+      "metrics": {
+        "incidents": "32",
+        "rank": "95",
+        "rate": "247.3717"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Berrigan",
+      "metrics": {
+        "incidents": "19",
+        "rank": "97",
+        "rate": "221.7554"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Blacktown",
+      "metrics": {
+        "incidents": "1958",
+        "rank": "29",
+        "rate": "576.8171"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bland",
+      "metrics": {
+        "incidents": "18",
+        "rank": "77",
+        "rate": "298.656"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Blayney",
+      "metrics": {
+        "incidents": "20",
+        "rank": "86",
+        "rate": "273.1494"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Blue Mountains",
+      "metrics": {
+        "incidents": "215",
+        "rank": "87",
+        "rate": "272.5348"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bogan",
+      "metrics": {
+        "incidents": "32",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Bourke",
+      "metrics": {
+        "incidents": "135",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Brewarrina",
+      "metrics": {
+        "incidents": "59",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Broken Hill",
+      "metrics": {
+        "incidents": "180",
+        "rank": "6",
+        "rate": "980.3922"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Burwood",
+      "metrics": {
+        "incidents": "75",
+        "rank": "100",
+        "rate": "198.2973"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Byron",
+      "metrics": {
+        "incidents": "90",
+        "rank": "85",
+        "rate": "274.3651"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Cabonne",
+      "metrics": {
+        "incidents": "43",
+        "rank": "74",
+        "rate": "318.2592"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Camden",
+      "metrics": {
+        "incidents": "246",
+        "rank": "73",
+        "rate": "331.9838"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Campbelltown",
+      "metrics": {
+        "incidents": "890",
+        "rank": "32",
+        "rate": "561.1991"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Canada Bay",
+      "metrics": {
+        "incidents": "121",
+        "rank": "111",
+        "rate": "133.7504"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Canterbury-Bankstown",
+      "metrics": {
+        "incidents": "1403",
+        "rank": "61",
+        "rate": "393.7384"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Carrathool",
+      "metrics": {
+        "incidents": "19",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Central Coast",
+      "metrics": {
+        "incidents": "1443",
+        "rank": "50",
+        "rate": "432.9901"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Central Darling",
+      "metrics": {
+        "incidents": "101",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Cessnock",
+      "metrics": {
+        "incidents": "390",
+        "rank": "19",
+        "rate": "697.8242"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Clarence Valley",
+      "metrics": {
+        "incidents": "217",
+        "rank": "53",
+        "rate": "420.975"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Cobar",
+      "metrics": {
+        "incidents": "41",
+        "rank": "10",
+        "rate": "855.2357"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Coffs Harbour",
+      "metrics": {
+        "incidents": "448",
+        "rank": "24",
+        "rate": "607.5482"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Coolamon",
+      "metrics": {
+        "incidents": "11",
+        "rank": "93",
+        "rate": "251.9469"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Coonamble",
+      "metrics": {
+        "incidents": "53",
+        "rank": "3",
+        "rate": "1295.5268"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Cootamundra-Gundagai",
+      "metrics": {
+        "incidents": "55",
+        "rank": "43",
+        "rate": "486.6395"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Cowra",
+      "metrics": {
+        "incidents": "79",
+        "rank": "23",
+        "rate": "626.7851"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Cumberland",
+      "metrics": {
+        "incidents": "908",
+        "rank": "58",
+        "rate": "410.5773"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Dubbo Regional",
+      "metrics": {
+        "incidents": "421",
+        "rank": "13",
+        "rate": "827.9741"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Dungog",
+      "metrics": {
+        "incidents": "31",
+        "rank": "71",
+        "rate": "344.1385"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Edward River",
+      "metrics": {
+        "incidents": "37",
+        "rank": "59",
+        "rate": "410.5637"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Eurobodalla",
+      "metrics": {
+        "incidents": "200",
+        "rank": "36",
+        "rate": "530.04"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Fairfield",
+      "metrics": {
+        "incidents": "807",
+        "rank": "60",
+        "rate": "396.5797"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Federation",
+      "metrics": {
+        "incidents": "37",
+        "rank": "78",
+        "rate": "296.7121"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Forbes",
+      "metrics": {
+        "incidents": "85",
+        "rank": "9",
+        "rate": "871.7949"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Georges River",
+      "metrics": {
+        "incidents": "429",
+        "rank": "81",
+        "rate": "283.9762"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Gilgandra",
+      "metrics": {
+        "incidents": "32",
+        "rank": "17",
+        "rate": "736.9876"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Glen Innes Severn",
+      "metrics": {
+        "incidents": "76",
+        "rank": "11",
+        "rate": "851.4452"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Goulburn Mulwaree",
+      "metrics": {
+        "incidents": "125",
+        "rank": "54",
+        "rate": "419.2521"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Greater Hume Shire",
+      "metrics": {
+        "incidents": "15",
+        "rank": "109",
+        "rate": "143.6644"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Griffith",
+      "metrics": {
+        "incidents": "257",
+        "rank": "5",
+        "rate": "982.003"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Gunnedah",
+      "metrics": {
+        "incidents": "57",
+        "rank": "47",
+        "rate": "457.9417"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Gwydir",
+      "metrics": {
+        "incidents": "15",
+        "rank": "82",
+        "rate": "282.9121"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Hawkesbury",
+      "metrics": {
+        "incidents": "275",
+        "rank": "56",
+        "rate": "417.3623"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Hay",
+      "metrics": {
+        "incidents": "11",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Hilltops",
+      "metrics": {
+        "incidents": "80",
+        "rank": "52",
+        "rate": "426.4392"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Hornsby",
+      "metrics": {
+        "incidents": "168",
+        "rank": "115",
+        "rate": "114.9528"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Hunters Hill",
+      "metrics": {
+        "incidents": "14",
+        "rank": "117",
+        "rate": "96.2861"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Inner West",
+      "metrics": {
+        "incidents": "491",
+        "rank": "90",
+        "rate": "260.1862"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Inverell",
+      "metrics": {
+        "incidents": "123",
+        "rank": "18",
+        "rate": "735.1623"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Junee",
+      "metrics": {
+        "incidents": "42",
+        "rank": "21",
+        "rate": "662.8788"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Kempsey",
+      "metrics": {
+        "incidents": "245",
+        "rank": "12",
+        "rate": "833.929"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Kiama",
+      "metrics": {
+        "incidents": "39",
+        "rank": "104",
+        "rate": "178.1635"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Ku-ring-gai",
+      "metrics": {
+        "incidents": "75",
+        "rank": "119",
+        "rate": "61.8225"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Kyogle",
+      "metrics": {
+        "incidents": "34",
+        "rank": "65",
+        "rate": "369.6858"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lachlan",
+      "metrics": {
+        "incidents": "63",
+        "rank": "7",
+        "rate": "976.7442"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lake Macquarie",
+      "metrics": {
+        "incidents": "749",
+        "rank": "64",
+        "rate": "372.1924"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lane Cove",
+      "metrics": {
+        "incidents": "31",
+        "rank": "118",
+        "rate": "85.1602"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Leeton",
+      "metrics": {
+        "incidents": "68",
+        "rank": "27",
+        "rate": "595.9162"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lismore",
+      "metrics": {
+        "incidents": "209",
+        "rank": "45",
+        "rate": "472.7223"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lithgow",
+      "metrics": {
+        "incidents": "95",
+        "rank": "49",
+        "rate": "443.9252"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Liverpool",
+      "metrics": {
+        "incidents": "940",
+        "rank": "48",
+        "rate": "455.857"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Liverpool Plains",
+      "metrics": {
+        "incidents": "41",
+        "rank": "37",
+        "rate": "523.1594"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Local Government Area",
+      "metrics": {
+        "incidents": "Number",
+        "rank": "Rank",
+        "rate": "Rate per 100,000 population"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lockhart",
+      "metrics": {
+        "incidents": "13",
+        "rank": "57",
+        "rate": "416.5332"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Lord Howe Island",
+      "metrics": {
+        "incidents": "0",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Maitland",
+      "metrics": {
+        "incidents": "470",
+        "rank": "25",
+        "rate": "607.4392"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Mid-Coast",
+      "metrics": {
+        "incidents": "450",
+        "rank": "42",
+        "rate": "494.2991"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Mid-Western Regional",
+      "metrics": {
+        "incidents": "123",
+        "rank": "40",
+        "rate": "504.6361"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Moree Plains",
+      "metrics": {
+        "incidents": "246",
+        "rank": "2",
+        "rate": "1791.0448"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Mosman",
+      "metrics": {
+        "incidents": "50",
+        "rank": "106",
+        "rate": "166.417"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Murray River",
+      "metrics": {
+        "incidents": "22",
+        "rank": "103",
+        "rate": "187.1544"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Murrumbidgee",
+      "metrics": {
+        "incidents": "12",
+        "rank": "76",
+        "rate": "308.2456"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Muswellbrook",
+      "metrics": {
+        "incidents": "93",
+        "rank": "31",
+        "rate": "565.8655"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Nambucca Valley",
+      "metrics": {
+        "incidents": "109",
+        "rank": "33",
+        "rate": "557.8015"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Narrabri",
+      "metrics": {
+        "incidents": "91",
+        "rank": "20",
+        "rate": "676.1275"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Narrandera",
+      "metrics": {
+        "incidents": "25",
+        "rank": "55",
+        "rate": "418.2001"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Narromine",
+      "metrics": {
+        "incidents": "71",
+        "rank": "4",
+        "rate": "1064.787"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Newcastle",
+      "metrics": {
+        "incidents": "689",
+        "rank": "51",
+        "rate": "431.488"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "North Sydney",
+      "metrics": {
+        "incidents": "118",
+        "rank": "105",
+        "rate": "166.5255"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Northern Beaches",
+      "metrics": {
+        "incidents": "346",
+        "rank": "112",
+        "rate": "131.7628"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Oberon",
+      "metrics": {
+        "incidents": "31",
+        "rank": "28",
+        "rate": "581.7226"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Orange",
+      "metrics": {
+        "incidents": "313",
+        "rank": "16",
+        "rate": "766.4618"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Parkes",
+      "metrics": {
+        "incidents": "116",
+        "rank": "15",
+        "rate": "775.7122"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Parramatta",
+      "metrics": {
+        "incidents": "641",
+        "rank": "83",
+        "rate": "281.5738"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Penrith",
+      "metrics": {
+        "incidents": "1055",
+        "rank": "34",
+        "rate": "533.6962"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Port Macquarie-Hastings",
+      "metrics": {
+        "incidents": "269",
+        "rank": "72",
+        "rate": "340.5193"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Port Stephens",
+      "metrics": {
+        "incidents": "332",
+        "rank": "46",
+        "rate": "472.5508"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Queanbeyan-Palerang Regional",
+      "metrics": {
+        "incidents": "153",
+        "rank": "89",
+        "rate": "267.8103"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Randwick",
+      "metrics": {
+        "incidents": "369",
+        "rank": "94",
+        "rate": "251.1776"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Richmond Valley",
+      "metrics": {
+        "incidents": "132",
+        "rank": "30",
+        "rate": "570.2436"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Ryde",
+      "metrics": {
+        "incidents": "168",
+        "rank": "110",
+        "rate": "141.7733"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Shellharbour",
+      "metrics": {
+        "incidents": "272",
+        "rank": "62",
+        "rate": "391.5134"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Shoalhaven",
+      "metrics": {
+        "incidents": "384",
+        "rank": "63",
+        "rate": "381.8996"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Singleton",
+      "metrics": {
+        "incidents": "87",
+        "rank": "66",
+        "rate": "368.8629"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Snowy Monaro Regional",
+      "metrics": {
+        "incidents": "47",
+        "rank": "96",
+        "rate": "229.5707"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Snowy Valleys",
+      "metrics": {
+        "incidents": "78",
+        "rank": "35",
+        "rate": "532.7869"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Strathfield",
+      "metrics": {
+        "incidents": "107",
+        "rank": "91",
+        "rate": "259.2305"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Sutherland Shire",
+      "metrics": {
+        "incidents": "455",
+        "rank": "99",
+        "rate": "202.0265"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Sydney",
+      "metrics": {
+        "incidents": "992",
+        "rank": "nc",
+        "rate": "463.4713"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Tamworth Regional",
+      "metrics": {
+        "incidents": "361",
+        "rank": "26",
+        "rate": "597.3656"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Temora",
+      "metrics": {
+        "incidents": "22",
+        "rank": "69",
+        "rate": "356.8532"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Tenterfield",
+      "metrics": {
+        "incidents": "53",
+        "rank": "14",
+        "rate": "789.5129"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "The Hills Shire",
+      "metrics": {
+        "incidents": "206",
+        "rank": "113",
+        "rate": "129.6078"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Tweed",
+      "metrics": {
+        "incidents": "334",
+        "rank": "68",
+        "rate": "362.0165"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Unincorporated Far West",
+      "metrics": {
+        "incidents": "4",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Upper Hunter Shire",
+      "metrics": {
+        "incidents": "27",
+        "rank": "102",
+        "rate": "187.3439"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Upper Lachlan Shire",
+      "metrics": {
+        "incidents": "15",
+        "rank": "101",
+        "rate": "192.2091"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Uralla",
+      "metrics": {
+        "incidents": "8",
+        "rank": "114",
+        "rate": "129.1572"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Wagga Wagga",
+      "metrics": {
+        "incidents": "327",
+        "rank": "39",
+        "rate": "516.3674"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Walcha",
+      "metrics": {
+        "incidents": "9",
+        "rank": "80",
+        "rate": "287.7238"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Walgett",
+      "metrics": {
+        "incidents": "175",
+        "rank": "1",
+        "rate": "2726.2814"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Warren",
+      "metrics": {
+        "incidents": "30",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Warrumbungle Shire",
+      "metrics": {
+        "incidents": "46",
+        "rank": "44",
+        "rate": "478.0711"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Waverley",
+      "metrics": {
+        "incidents": "200",
+        "rank": "84",
+        "rate": "280.3634"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Weddin",
+      "metrics": {
+        "incidents": "10",
+        "rank": "88",
+        "rate": "271.1497"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Wentworth",
+      "metrics": {
+        "incidents": "66",
+        "rank": "8",
+        "rate": "957.91"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Willoughby",
+      "metrics": {
+        "incidents": "86",
+        "rank": "116",
+        "rate": "113.2026"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Wingecarribee",
+      "metrics": {
+        "incidents": "124",
+        "rank": "92",
+        "rate": "257.5286"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Wollondilly",
+      "metrics": {
+        "incidents": "179",
+        "rank": "67",
+        "rate": "368.601"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Wollongong",
+      "metrics": {
+        "incidents": "723",
+        "rank": "70",
+        "rate": "347.0739"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Woollahra",
+      "metrics": {
+        "incidents": "88",
+        "rank": "107",
+        "rate": "153.0089"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Yass Valley",
+      "metrics": {
+        "incidents": "24",
+        "rank": "108",
+        "rate": "146.7351"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    }
+  ],
+  "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^",
+  "sample": [
+    {
+      "lga": "              (electronic or otherwise) containing that data.",
+      "metrics": {},
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Albury",
+      "metrics": {
+        "incidents": "268",
+        "rank": "38",
+        "rate": "520.5299"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Armidale Regional",
+      "metrics": {
+        "incidents": "195",
+        "rank": "22",
+        "rate": "645.8451"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Ballina",
+      "metrics": {
+        "incidents": "93",
+        "rank": "98",
+        "rate": "219.6712"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    },
+    {
+      "lga": "Balranald",
+      "metrics": {
+        "incidents": "10",
+        "rank": "nc",
+        "rate": "nc"
+      },
+      "offense": "Incidents of domestic violence related assault as recorded by NSW Police for each NSW Local Government Area (LGA): Number, rate^ and rank^^"
+    }
+  ],
+  "success": true
+}

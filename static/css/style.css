@@ -1,0 +1,1887 @@
+:root {
+    --primary-color: #4A6FDE;
+    --primary-dark: #3A5ECD;
+    --accent-color: #FF7043;
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+    --text-color: #333;
+    --text-light: #777;
+    --background-color: #F9FAFB;
+    --card-color: #FFF;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --custom-point-color: #9C27B0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#controls {
+    width: 280px;
+    padding: 12px;
+    background-color: var(--card-color);
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+#map {
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+h3 {
+    margin: 0 0 8px 0;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 8px;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-family: var(--font-main);
+    font-size: 12px;
+    transition: var(--transition);
+    background-color: #FAFAFA;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 222, 0.1);
+}
+
+/* Styling for active input during marker placement */
+input.active-input {
+    border-color: var(--primary-color);
+    background-color: rgba(74, 111, 222, 0.05);
+    box-shadow: 0 0 0 3px rgba(74, 111, 222, 0.2);
+}
+
+button {
+    background: linear-gradient(135deg, #1E3A5F 0%, #3A5ECD 100%);
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    transition: var(--transition);
+    font-family: var(--font-main);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #254773 0%, #4A6FDE 100%);
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background-color: #CBD5E1;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Drawing Controls */
+.drawing-controls {
+    margin: 8px 0;
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+}
+
+.filter-group {
+    margin-top: 12px;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 12px;
+}
+
+.filter-group > label {
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Search box for POIs */
+.search-box {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.search-box input {
+    flex-grow: 1;
+}
+
+.search-box button {
+    width: auto;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    margin: 0;
+}
+
+.poi-list {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Route information styles */
+.route-info {
+    margin: 8px 0;
+    padding: 10px;
+    background-color: rgba(74, 111, 222, 0.1);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+    font-size: 12px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.info-value {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.poi-item {
+    padding: 6px 8px;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--border-radius);
+    margin-bottom: 0;
+    background-color: var(--card-color);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 12px;
+}
+
+.poi-item:hover {
+    background-color: #F3F4F6;
+    border-color: #D1D5DB;
+}
+
+.poi-item.selected {
+    background-color: rgba(74, 111, 222, 0.1);
+    border-color: var(--primary-color);
+}
+
+.poi-name {
+    font-weight: 500;
+    margin-bottom: 1px;
+    font-size: 12px;
+}
+
+.poi-address, .poi-description {
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.poi-address {
+    color: var(--text-light);
+}
+
+.poi-description {
+    color: var(--text-color);
+    margin-top: 1px;
+    font-style: italic;
+}
+
+.poi-hint {
+    margin-top: 4px;
+    font-size: 10px;
+    color: var(--text-light);
+    text-align: center;
+    padding: 6px;
+    background-color: #FAFAFA;
+    border-radius: var(--border-radius);
+}
+
+.poi-empty {
+    color: var(--text-light);
+    font-style: italic;
+    font-size: 13px;
+    padding: 8px;
+    text-align: center;
+}
+
+.notification {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: var(--border-radius);
+    display: none;
+    font-size: 12px;
+}
+
+.notification.error {
+    background-color: #FEF2F2;
+    color: #B91C1C;
+    border-left: 4px solid #EF4444;
+}
+
+.notification.info {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+    border-left: 4px solid #3B82F6;
+}
+
+.notification.success {
+    background-color: #ECFDF5;
+    color: #065F46;
+    border-left: 4px solid #10B981;
+}
+
+.loading {
+    text-align: center;
+    margin: 10px 0;
+    display: none;
+}
+
+.spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 4px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Travel mode toggle */
+.mode-toggle {
+    margin-bottom: 8px;
+    background-color: rgba(76, 237, 196, 0.15);
+    padding: 6px 8px;
+    border-radius: var(--border-radius);
+    border-left: 3px solid #4ECDC4;
+}
+
+.mode-toggle label {
+    font-weight: 600;
+    color: #0B1D32;
+    text-align: center;
+    display: block;
+    font-size: 13px;
+}
+
+.toggle-container {
+    display: flex;
+    gap: 0;
+    margin-top: 4px;
+    background-color: #F3F4F6;
+    border-radius: var(--border-radius);
+    padding: 3px;
+}
+
+.toggle-container input[type="radio"] {
+    display: none;
+}
+
+.toggle-container label {
+    flex: 1;
+    text-align: center;
+    padding: 4px 6px;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    margin: 0;
+    transition: var(--transition);
+}
+
+.toggle-container input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* AI Assistant Button */
+.ai-assistant-button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2C3E50 0%, #4A6FDE 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 111, 222, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ai-assistant-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 111, 222, 0.6);
+}
+
+.assistant-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.icon-moon {
+    display: none;
+}
+
+.icon-shield {
+    display: none;
+}
+
+.icon-robot {
+    font-size: 32px;
+    color: white;
+    animation: pulse 2s ease infinite;
+    animation-play-state: paused;
+}
+
+.ai-assistant-button:hover .assistant-icon {
+    animation: pulse 1.5s ease infinite;
+}
+
+.ai-assistant-button.attention {
+    animation: bounce 0.5s ease 3;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.ai-assistant-button:hover .icon-robot {
+    animation-play-state: running;
+}
+
+/* Remove the old chat toggle button */
+.chat-toggle-btn {
+    display: none;
+}
+
+/* Adjust chat panel to work with new button */
+.chat-panel {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 85px;
+    width: 260px;
+    max-height: 60vh;
+    height: 400px;
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(74, 111, 222, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(20px);
+    opacity: 0;
+    z-index: 999;
+}
+
+.chat-panel.open {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.chat-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #2C3E50 0%, #4A6FDE 100%);
+    color: white;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.chat-panel-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 13px;
+}
+
+.chat-close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    transition: var(--transition);
+}
+
+.chat-close-btn:hover {
+    transform: scale(1.1);
+    background: none;
+}
+
+.chat-panel .chat-messages {
+    flex-grow: 1;
+    height: auto;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 8px;
+    font-size: 11px;
+    overflow-y: auto;
+    max-height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.message {
+    padding: 6px 8px;
+    border-radius: var(--border-radius);
+    max-width: 85%;
+    word-wrap: break-word;
+}
+
+.message p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.message.assistant {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background-color: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 8px 12px;
+    max-width: 85%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.assistant-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4A6FDE 0%, #2C3E50 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(74,111,222,0.10);
+}
+
+.message.assistant .message-content {
+    flex: 1;
+    word-break: break-word;
+}
+
+.chat-panel .chat-input-container {
+    padding: 8px;
+    border-top: 1px solid #E5E7EB;
+    background-color: var(--card-color);
+    display: flex;
+    gap: 6px;
+    min-height: 40px;
+    position: relative;
+}
+
+.chat-input-container input {
+    flex-grow: 1;
+    font-size: 12px;
+    padding: 6px 8px;
+}
+
+.chat-input-container button {
+    width: auto;
+    margin: 0;
+    padding: 6px 8px;
+    font-size: 12px;
+}
+
+/* For mobile, make the chat panel appear from bottom */
+@media (max-width: 768px) {
+    .ai-assistant-button {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chat-panel {
+        bottom: 20px;
+        right: 90px;
+        width: calc(100% - 110px); /* Leave space for bot button */
+        max-width: 260px;
+        height: 60vh;
+    }
+    
+    #controls {
+        width: 240px;
+        padding: 12px;
+    }
+    
+    .app-brand h1 {
+        font-size: 20px;
+    }
+    
+    .brand-icon {
+        font-size: 16px;
+    }
+    
+    .header-bar {
+        padding: 6px 10px;
+    }
+}
+
+.app-brand {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    border-bottom: none;
+}
+
+.app-brand h1 {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    background: none;
+    -webkit-text-fill-color: white;
+    border: none;
+    padding: 0;
+}
+
+.brand-icon {
+    font-size: 20px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.brand-tagline {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Header bar styles */
+.header-bar {
+    background: linear-gradient(135deg, #0B1D32 0%, #1E3A5F 100%);
+    color: white;
+    padding: 8px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Map Controls */
+.map-controls-container {
+    display: none;
+}
+
+/* Marker Controls Container */
+#marker-controls-container {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+#marker-controls-container.collapsed {
+    transform: translateX(calc(100% - 40px));
+}
+
+#marker-controls-toggle {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+#marker-controls-toggle:hover {
+    background-color: #f5f5f5;
+}
+
+#marker-controls-toggle i {
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+#marker-controls-container.collapsed #marker-controls-toggle i {
+    transform: rotate(180deg);
+}
+
+#marker-controls {
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 200px;
+}
+
+.map-control-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: none;
+    background: white;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 14px;
+}
+
+.map-control-btn:hover {
+    background: #f5f5f5;
+}
+
+.map-control-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.map-control-btn i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Specific styles for active states */
+#toggle-traffic-signals.active {
+    background: #BA68C8;
+    color: white;
+}
+
+#toggle-street-lamps.active {
+    background: #FF9800;
+    color: white;
+}
+
+#toggle-hospitals.active {
+    background: #F48FB1;
+    color: white;
+}
+
+#toggle-police-stations.active {
+    background: #4285F4;
+    color: white;
+}
+
+/* Add styles for the input wrapper and search icon */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding-right: 30px; /* Make room for the search icon */
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 16px;
+    z-index: 5;
+}
+
+.search-icon:hover {
+    color: #000;
+}
+
+/* Safety radius control styles */
+.safety-control {
+    margin-bottom: 12px;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 12px;
+}
+
+.safety-control h3 {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.safety-radius-slider-container {
+    background-color: rgba(74, 111, 222, 0.05);
+    padding: 8px;
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--primary-color);
+}
+
+.radius-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.safety-radius-slider-container label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0;
+}
+
+#safety-radius {
+    width: 100%;
+    margin: 0;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e0e0e0;
+    outline: none;
+    border-radius: 3px;
+}
+
+#safety-radius::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+#safety-radius::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.small-btn {
+    background: white;
+    color: var(--text-color);
+    border: 1px solid #E5E7EB;
+    border-radius: var(--border-radius);
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.small-btn:hover {
+    background: #f5f5f5;
+    border-color: #D1D5DB;
+}
+
+.safety-hint {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* Route Options Panel Styles */
+.route-options-panel {
+    margin: 0 0 16px 0;
+    padding: 8px;
+    background-color: rgba(74, 111, 222, 0.05);
+    border-radius: var(--border-radius);
+    border-left: 3px solid var(--primary-color);
+}
+
+.route-options-panel h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.route-options-hint {
+    font-size: 11px;
+    color: var(--text-light);
+    text-align: center;
+    font-style: italic;
+    margin: 16px 0;
+}
+
+.route-option {
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    border: 1px solid #E5E7EB;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.route-option:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.route-option.selected {
+    background-color: rgba(74, 111, 222, 0.1);
+    border-color: var(--primary-color);
+}
+
+.route-option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.route-option-title {
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.route-option-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 11px;
+}
+
+.route-option-detail {
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+}
+
+.detail-label {
+    font-size: 10px;
+    color: var(--text-light);
+}
+
+.detail-value {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.route-option-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.05);
+    padding-top: 4px;
+}
+
+.route-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.route-badge.real {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.route-badge.simulated {
+    background-color: rgba(158, 158, 158, 0.1);
+    color: #757575;
+    border: 1px solid rgba(158, 158, 158, 0.3);
+}
+
+.safety-pill {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+}
+
+.safety-excellent {
+    background-color: #4CAF50;
+}
+
+.safety-good {
+    background-color: #8BC34A;
+}
+
+.safety-moderate {
+    background-color: #FFC107;
+}
+
+.safety-poor {
+    background-color: #FF9800;
+}
+
+.safety-verypoor {
+    background-color: #F44336;
+}
+
+/* Map Control styles - kept for the traffic signals and crime buttons */
+.map-control-btn.filter-active {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* Visualization for the safety radius */
+.safety-radius-circle {
+    stroke-dasharray: 5, 5;
+    stroke-width: 2;
+}
+
+/* Autocomplete dropdown styles */
+.autocomplete-dropdown {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: var(--card-color);
+    border: 1px solid #E5E7EB;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 10;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-dropdown.show {
+    display: block;
+}
+
+.autocomplete-item {
+    padding: 4px 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 11px;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.4;
+}
+
+.autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.selected {
+    background-color: rgba(74, 111, 222, 0.1);
+}
+
+/* Cursor styles for marker placement mode */
+.marker-placement-active .mapboxgl-canvas-container {
+    cursor: crosshair !important;
+}
+
+.marker-placement-active .mapboxgl-canvas {
+    cursor: crosshair !important;
+}
+
+/* Cursor styles for drawing mode */
+.drawing-mode-active .mapboxgl-canvas-container {
+    cursor: crosshair !important;
+}
+
+.drawing-mode-active .mapboxgl-canvas {
+    cursor: crosshair !important;
+}
+
+/* Custom cursor styling to make it more visible */
+.mapboxgl-canvas-container.crosshair,
+.drawing-mode-active .mapboxgl-canvas-container,
+.marker-placement-active .mapboxgl-canvas-container {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath stroke='%234ECDC4' stroke-width='2' d='M12 0 L12 24 M0 12 L24 12'/%3E%3Ccircle cx='12' cy='12' r='2' fill='white' stroke='%234ECDC4' stroke-width='1'/%3E%3C/svg%3E") 12 12, crosshair !important;
+}
+
+/* Make active inputs more noticeable */
+.input-wrapper .active-input {
+    border-color: #4ECDC4 !important;
+    background-color: rgba(78, 205, 196, 0.1);
+    box-shadow: 0 0 8px rgba(78, 205, 196, 0.4);
+}
+
+/* Make borders thinner */
+.input-wrapper input, .poi-item, .safety-radius-slider-container, button {
+    border-radius: 4px;
+}
+
+/* Make safety hint and POI hint more compact */
+.safety-hint, .poi-hint {
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+/* Reduce POI item internal spacing */
+.poi-name {
+    font-weight: 500;
+    margin-bottom: 1px;
+    font-size: 12px;
+}
+
+.poi-address, .poi-description {
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+/* Make the toggle more compact */
+.toggle-container {
+    margin-top: 4px;
+}
+
+.toggle-container label {
+    padding: 4px 6px;
+    font-size: 11px;
+}
+
+/* Adjust the spinner and loading indicators */
+.loading {
+    margin: 10px 0;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    margin: 0 auto 4px;
+}
+
+/* Make radius header more compact */
+.radius-header {
+    margin-bottom: 4px;
+}
+
+/* Reduce spacing in autocomplete dropdown */
+.autocomplete-item {
+    padding: 4px 8px;
+    font-size: 11px;
+}
+
+/* Condense chat panel elements */
+.chat-panel .chat-messages {
+    padding: 8px;
+    gap: 6px;
+}
+
+.message {
+    padding: 6px 8px;
+    font-size: 11px;
+}
+
+.chat-panel-header {
+    padding: 8px 12px;
+}
+
+.chat-panel-header h3 {
+    font-size: 13px;
+}
+
+.traffic-cluster-slider-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: none;
+    width: 100%;
+    max-width: 200px;
+    text-align: right;
+}
+
+.traffic-cluster-slider-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+#traffic-cluster-radius {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Ensure markers are draggable */
+.mapboxgl-canvas {
+    cursor: default;
+}
+
+/* Make markers in the map interactive */
+#map .mapboxgl-marker,
+#map .mapboxgl-marker-dragging,
+#map .markers,
+#map .marker-halos,
+#map .marker-labels {
+    cursor: move;
+    cursor: grab;
+    pointer-events: auto !important;
+}
+
+#map .mapboxgl-marker-dragging {
+    cursor: grabbing;
+}
+
+/* Allow circle markers to be properly dragged */
+.mapboxgl-canvas-container .markers-point .mapboxgl-interactive {
+    cursor: move !important;
+    cursor: grab !important;
+}
+
+.mapboxgl-canvas-container .markers-point.dragging .mapboxgl-interactive {
+    cursor: grabbing !important;
+}
+
+/* Improved styling for marker interaction */
+#map .markers, 
+#map .marker-halos,
+#map [id^="marker"],
+.mapboxgl-canvas-container [id^="marker"] {
+    cursor: grab !important;
+}
+
+.mapboxgl-canvas-container.dragging [id^="marker"],
+.dragging-marker .mapboxgl-canvas {
+    cursor: grabbing !important;
+}
+
+/* Force the grabbing cursor during dragging */
+.dragging-marker {
+    cursor: grabbing !important;
+}
+
+/* Make sure the entire marker area is clickable */
+#map .mapboxgl-marker {
+    pointer-events: all !important;
+}
+
+/* Make sure custom points don't interfere with marker interaction */
+#map .custom-points[data-point-type="start"],
+#map .custom-points[data-point-type="end"] {
+    pointer-events: none !important;
+}
+
+/* Provide visual feedback when hovering over markers */
+.marker-hover {
+    cursor: grab !important;
+}
+
+.marker-hover .mapboxgl-canvas {
+    cursor: grab !important;
+}
+
+/* Safety score styles */
+.safety-score {
+    font-weight: 700;
+    font-size: 16px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: help;
+}
+
+.safety-rating {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-left: 5px;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    max-width: 250px;
+    pointer-events: none;
+}
+
+.safety-tooltip h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.safety-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.safety-detail.small {
+    font-size: 11px;
+    color: #666;
+}
+
+.safety-detail span:first-child {
+    font-weight: 500;
+}
+
+/* Info item safety score specific styling */
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Hospital popup styles */
+.hospital-popup {
+    padding: 6px;
+    max-width: 280px;
+}
+
+.hospital-popup h3 {
+    margin: 0 0 8px 0;
+    color: #F48FB1;
+    font-size: 12px;
+    font-weight: 300;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2px;
+    padding-right: 20px; /* Add padding to make room for the close button */
+}
+
+.hospital-popup .info-row {
+    margin-bottom: 4px;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.hospital-popup .info-row strong {
+    color: #555;
+    font-weight: 600;
+}
+
+.hospital-popup .info-row a {
+    color: #4A6FDE;
+    text-decoration: none;
+}
+
+.hospital-popup .info-row a:hover {
+    text-decoration: underline;
+}
+
+/* Mapbox popup customization */
+.mapboxgl-popup {
+    z-index: 5;
+}
+
+.mapboxgl-popup-content {
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* Fix popup close button position */
+.mapboxgl-popup-close-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 16px;
+    color: #999;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    z-index: 10;
+}
+
+.mapboxgl-popup-close-button:hover {
+    color: #666;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+}
+
+/* Ensure hospital button active state is properly styled */
+#toggle-hospitals.active {
+    background: linear-gradient(135deg, #EC407A 0%, #F48FB1 100%);
+    box-shadow: 0 0 0 3px rgba(244, 143, 177, 0.3);
+}
+
+/* Custom class for hospital popups */
+.hospital-info-popup .mapboxgl-popup-content {
+    padding-top: 15px; /* Increase top padding to ensure no overlap with close button */
+}
+
+.hospital-info-popup .mapboxgl-popup-close-button {
+    background: rgba(244, 143, 177, 0.1);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Ensure slider appears when traffic signals are toggled on */
+#traffic-signals-control.active .traffic-cluster-slider-container {
+    display: block;
+}
+
+/* Marker Controls Container */
+#marker-controls-container {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+#marker-controls-container.collapsed {
+    transform: translateX(calc(100% - 40px));
+}
+
+#marker-controls-toggle {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+
+#marker-controls-toggle:hover {
+    background-color: #f5f5f5;
+}
+
+#marker-controls-toggle i {
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+#marker-controls-container.collapsed #marker-controls-toggle i {
+    transform: rotate(180deg);
+}
+
+#marker-controls {
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 200px;
+}
+
+.map-control-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: none;
+    background: white;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 14px;
+}
+
+.map-control-btn:hover {
+    background: #f5f5f5;
+}
+
+.map-control-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.map-control-btn i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+#marker-controls-container.collapsed #marker-controls {
+    display: none;
+}
+
+/* Crime Time Analysis Panel */
+.crime-time-panel {
+    position: absolute;
+    top:85px;
+    left: 320px; /* Adjusted to match exact sidebar width */
+    width: 240px; /* Reduced width */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    z-index: 10;
+    /* Panel is visible by default but content is collapsed */
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 90%; /* Scale down text proportionally */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Crime Type Panel specific positioning */
+#crime-type-panel {
+    top: 145px; /* Position below the crime time panel when it's collapsed */
+    background-color: white;
+}
+
+/* When crime time panel is expanded, move the type panel down */
+#crime-time-panel:not(.collapsed) + #crime-type-panel {
+    top: 645px;
+}
+
+.crime-time-panel .panel-header {
+    background: linear-gradient(135deg, #2C3E50 0%, #4A6FDE 100%);
+    color: white;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Different gradient for crime type panel */
+#crime-type-panel .panel-header {
+    background: linear-gradient(135deg, #34495E 0%, #E74C3C 100%);
+}
+
+.crime-time-panel .panel-header h3 {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.crime-time-panel .panel-header h3 i {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.panel-toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+    position: absolute;
+    right: 14px;
+    top: 9px;
+    z-index: 20;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.panel-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+}
+
+/* Collapsed state styles */
+.crime-time-panel.collapsed .panel-content {
+    display: none !important;
+}
+
+/* Make sure toggle button is always visible */
+.panel-toggle-btn {
+    z-index: 15;
+}
+
+/* Add a transition for smoother toggle */
+.crime-time-panel .panel-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Make sure header stays visible and styled properly when collapsed */
+.crime-time-panel.collapsed .panel-header {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Change icon rotation when collapsed */
+.crime-time-panel.collapsed .panel-toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* Override rotation for streetlight panel to allow manual control */
+#streetlight-panel.collapsed .panel-toggle-btn i {
+    transform: none;
+}
+
+.crime-time-panel .panel-content {
+    padding: 12px;
+    background-color: #fcfcfc;
+}
+
+.time-chart-container {
+    width: 100%;
+    height: 140px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    padding: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.time-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    padding: 0 4px;
+}
+
+.stat-item:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.stat-value {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.time-categories {
+    margin-bottom: 12px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.category:last-child {
+    margin-bottom: 0;
+}
+
+.category-label {
+    color: var(--text-light);
+    font-size: 10px;
+    margin-right: 5px;
+    flex: 0 0 50px;
+}
+
+.category-value {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 11px;
+    margin-right: 8px;
+    flex: 0 0 20px;
+    text-align: right;
+}
+
+.category-bar {
+    flex: 1;
+    height: 4px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-fill {
+    height: 100%;
+    width: 0%; /* Will be set dynamically with JS */
+    border-radius: 4px;
+    transition: width 0.5s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.morning .bar-fill {
+    background: linear-gradient(90deg, #4FC3F7 0%, #29B6F6 100%);
+}
+
+.afternoon .bar-fill {
+    background: linear-gradient(90deg, #FFA726 0%, #FF9800 100%);
+}
+
+.evening .bar-fill {
+    background: linear-gradient(90deg, #7E57C2 0%, #673AB7 100%);
+}
+
+.night .bar-fill {
+    background: linear-gradient(90deg, #5C6BC0 0%, #3F51B5 100%);
+}
+
+.time-advice {
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 10px;
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+    border-radius: 6px;
+    color: #2C3E50;
+    border-left: 2px solid #66BB6A;
+    margin-top: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Hide the View Crime Times button as requested */
+#show-crime-time-btn {
+    display: none !important;
+}
+
+/* Smaller font sizes for crime time analysis values */
+.stat-label {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.stat-value {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 11px;
+}
+
+.category-label {
+    color: var(--text-light);
+    font-size: 10px;
+    margin-right: 5px;
+    flex: 0 0 60px;
+}
+
+.category-value {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 11px;
+    margin-right: 8px;
+    flex: 0 0 20px;
+    text-align: right;
+}
+
+/* Streetlight Coverage Panel Styles */
+#streetlight-panel {
+    position: absolute;
+    top: 85px;
+    left: 580px; /* Position to the right of crime time panel (320px + 240px + 20px) */
+    width: 240px;
+    margin-top: 0;
+}
+
+#streetlight-panel .panel-header {
+    background: linear-gradient(135deg, #E1A100 0%, #FFB800 100%);
+}
+
+.progress-container {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 22px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #E1A100 0%, #FFB800 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 12px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 12px;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+}
+
+.stat-desc {
+    font-size: 10px;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+
+.streetlight-advice {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background-color: rgba(225, 161, 0, 0.1);
+    border-radius: var(--border-radius);
+    border-left: 4px solid #FFB800;
+    font-size: 12px;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+    #streetlight-panel {
+        left: 320px; /* Stack below crime time panel on smaller screens */
+        top: 205px; /* Position below crime type panel */
+    }
+    
+    #crime-type-panel {
+        top: 145px; /* Keep in original position */
+    }
+} 

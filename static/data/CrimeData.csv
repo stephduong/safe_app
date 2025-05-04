@@ -1,0 +1,11 @@
+OffenceCategory,OffenceType,LGA,Suburb,Year,Month,Day,Time,Latitude,Longitude
+Theft,Retail Theft,Sydney,CBD,2023,January,Monday,13:45,-33.8688,151.2093
+Assault,Common Assault,Sydney,Surry Hills,2023,February,Friday,22:30,-33.8845,151.2115
+Vandalism,Property Damage,Sydney,Darlinghurst,2023,March,Saturday,03:15,-33.8786,151.2219
+Robbery,Armed Robbery,Sydney,Redfern,2023,April,Tuesday,19:20,-33.8932,151.2001
+Theft,Vehicle Theft,Sydney,Newtown,2023,May,Sunday,11:10,-33.8977,151.1797
+Assault,Serious Assault,Sydney,Glebe,2023,June,Monday,01:35,-33.8789,151.1835
+Theft,Break and Enter,Sydney,Pyrmont,2023,July,Wednesday,16:45,-33.8689,151.1945
+Vandalism,Graffiti,Sydney,Chippendale,2023,August,Friday,23:50,-33.8846,151.1997
+Assault,Domestic Violence,Sydney,Ultimo,2023,September,Saturday,20:15,-33.8775,151.1995
+Theft,Pickpocketing,Sydney,CBD,2023,October,Thursday,12:30,-33.8722,151.2072 
